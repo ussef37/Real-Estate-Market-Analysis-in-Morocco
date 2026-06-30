@@ -32,8 +32,6 @@ Après nettoyage, les deux sources partagent exactement les mêmes colonnes avec
 ### Fusion
 Une fois les schémas alignés, Avito et Mubawab sont concaténés en deux tables : une pour la vente, une pour la location, chacune avec une colonne `listing_type` pour ne pas perdre cette distinction.
 
-### Une fausse piste évitée
-Au départ je voulais détecter si un loyer était journalier ou mensuel, en pensant qu'il y avait peut-être des annonces de type Airbnb mélangées dans les données de location. En creusant les prix les plus bas du dataset, il s'est avéré qu'il ne s'agit pas de location courte durée mais de prix manquants ou mal scrapés (des appartements meublés à "150 DH/mois", ce qui n'a aucun sens). Pas de vraie location courte durée dans les données actuelles donc pas de classificateur à construire pour l'instant — un signal `price_suspect` suffit à isoler ces cas plutôt que d'inventer une distinction que la donnée ne supporte pas.
 
 ## Ce qui reste à faire
 
