@@ -1,0 +1,128 @@
+Projet Data Analyst — Projet Fil Rouge
+🏷️ 1. Intitulé du projet
+
+Real Estate Market Analysis in Morocco: Prices, Trends, and Rental
+
+🧠 2. Contexte métier
+
+Le marché immobilier marocain connaît une croissance soutenue, portée par l’urbanisation, le développement touristique et l’essor des plateformes de location courte durée comme Airbnb.
+
+Dans ce contexte, les investisseurs immobiliers cherchent à maximiser la rentabilité de leurs investissements, mais font face à plusieurs difficultés :
+
+absence de données centralisées et fiables
+forte disparité des prix entre villes et quartiers
+manque de visibilité sur la rentabilité réelle (longue vs courte durée)
+difficulté à comparer les opportunités d’investissement
+
+Les données disponibles sont dispersées sur plusieurs plateformes telles que Avito et Mubawab, sans structuration ni outil d’aide à la décision.
+
+❓ 3. Problématique
+
+Dans quelles villes et zones du Maroc investir afin de maximiser la rentabilité locative, en comparant location longue durée et courte durée ?
+
+🎯 4. Objectifs du projet
+🎯 Objectif principal
+
+Identifier les zones géographiques les plus rentables pour un investissement immobilier locatif au Maroc.
+
+🎯 Objectifs secondaires
+Analyser les prix de l’immobilier (achat et location)
+Comparer les prix entre villes et types de biens
+Estimer la rentabilité locative (ROI)
+Comparer les performances entre location longue durée et courte durée
+Détecter des opportunités d’investissement (biens sous-évalués ou zones attractives)
+📊 5. Indicateurs clés de performance (KPI)
+
+Les indicateurs suivants seront calculés et analysés :
+
+Prix moyen au m² (MAD/m²)
+Loyer moyen mensuel par ville
+Prix moyen par nuit (Airbnb)
+
+ROI estimé (%)
+
+ROI=
+Prixd’achat
+Revenulocatifannuel
+	​
+
+×100
+Ratio rentabilité Airbnb vs location longue durée
+Classement des villes/quartiers les plus rentables
+Prix médian vs prix moyen (détection des anomalies)
+🗂️ 6. Sources de données
+
+Le projet s’appuie sur plusieurs sources de données hétérogènes :
+
+🔹 Sources principales
+Mubawab
+possible (Avito,Airbnb)
+🔹 Type de données collectées
+prix (vente / location)
+surface (m²)
+localisation (ville, quartier)
+type de bien (appartement, studio, maison)
+caractéristiques du bien
+🔹 Méthode de collecte
+scraping web via scripts Python
+extraction automatisée des données
+⚠️ 7. Contraintes et hypothèses
+l'abxence de date de listing des post
+Les données issues du scraping peuvent contenir du bruit (erreurs, doublons, incohérences)
+Les données Airbnb peuvent être partielles ou estimées
+Le ROI est une estimation basée sur des moyennes (non contractuelle)
+L’historique des données peut être limité, impactant l’analyse temporelle
+Certaines zones avec peu de données pourront être exclues
+🔄 8. Architecture et pipeline data
+
+Le projet suit un pipeline data complet :
+
+1. Collecte
+Extraction via scripts Python (scraping)
+2. Stockage brut
+Fichiers CSV / données non transformées
+3. Transformation
+Nettoyage des données (valeurs manquantes, doublons)
+Normalisation des formats
+Enrichissement (prix/m², ROI, indicateurs dérivés)
+4. Stockage structuré
+Base de données relationnelle (SQL)
+5. Modélisation
+Mise en place d’un schéma en étoile (Star Schema)
+
+Exemple :
+
+Table de faits : Transactions immobilières
+Dimensions : Ville, Type de bien, Temps
+6. Visualisation
+Dashboard interactif sous Power BI
+📈 9. Analyse exploratoire (EDA)
+Analyse des distributions de prix
+Détection des valeurs aberrantes
+Analyse des corrélations (prix vs surface, localisation)
+Comparaison entre villes
+📊 10. Analyse statistique
+Test de comparaison (t-test) :
+rentabilité daily rent vs location longue durée
+Analyse de corrélation :
+prix, surface, localisation
+📊 11. Visualisation et dashboard
+🔹 Page 1 — Synthèse
+KPI principaux
+Carte du Maroc (prix / ROI)
+Classement des villes
+🔹 Page 2 — Analyse détaillée
+Prix au m² par ville
+ROI par zone
+Comparaison daily rent vs long terme
+Distribution des prix
+🔹 Filtres interactifs
+ville
+type de bien
+surface
+budget
+🧠 12. Data storytelling
+
+Le projet s’inscrit dans une démarche décisionnelle visant à démontrer :
+
+Quelle villes et zones offrent une rentabilité supérieure par rapport au montant investi.
